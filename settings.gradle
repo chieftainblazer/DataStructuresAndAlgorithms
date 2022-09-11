@@ -1,0 +1,5 @@
+rootProject.name = 'DataStructures'
+include 'deques'
+include 'heaps'
+include 'Dictionaries'
+
