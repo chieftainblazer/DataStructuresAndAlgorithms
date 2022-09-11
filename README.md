@@ -14,7 +14,6 @@ tests in my project that were designed to test the behavior of the data structur
 these tests, I'm confident that these structures have been well implemented. In any case, feel free to give feedback as
 to where it might be helpful to test for a possible **hard to detect edge case**.
 
-## How to Use
-1. Fork the repository into your own local machine.
-2. 
+### Technologies
+This project was built in IntelliJ.
 
