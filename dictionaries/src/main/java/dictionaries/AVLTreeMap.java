@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 /**
- * Class BinarySearchTreeMap is a Map that uses a Binary Search Tree as its
+ * Class AVLTreeMap is a Map that uses an AVL Tree as its
  * implementation. It extends all the methods from {@link AbstractIterableMap} and
  * overrides them with the correct implementation in here.
  *
@@ -54,12 +54,52 @@ public class AVLTreeMap<K extends Comparable<? super K>, V> extends AbstractIter
         return nodeToGet.value;
     }
 
+    /**
+     * Associates the specified value with the specified key in this map
+     * (optional operation).  If the map previously contained a mapping for
+     * the key, the old value is replaced by the specified value.  (A map
+     * {@code m} is said to contain a mapping for a key {@code k} if and only
+     * if {@link #containsKey(Object) m.containsKey(k)} would return
+     * {@code true}.)
+     *
+     * @param key key with which the specified value is to be associated
+     * @param value value to be associated with the specified key
+     * @return the previous value associated with {@code key}, or
+     *         {@code null} if there was no mapping for {@code key}.
+     *         (A {@code null} return can also indicate that the map
+     *         previously associated {@code null} with {@code key},
+     *         if the implementation supports {@code null} values.)
+     */
     public V put(K key, V value) {
         AVLNode<K, V> oldNode = new AVLNode<>(null, null);
         overallRoot = put(overallRoot, oldNode, key, value);
         return oldNode.value;
     }
 
+    /**
+     * Removes the mapping for a key from this map if it is present
+     * (optional operation). More formally, if this map contains a mapping
+     * from key {@code k} to value {@code v} such that
+     * {@code Objects.equals(key, k)}, that mapping
+     * is removed.  (The map can contain at most one such mapping.)
+     *
+     * Returns the value to which this map previously associated the key,
+     * or {@code null} if the map contained no mapping for the key.
+     *
+     * A return value of {@code null} does not necessarily indicate that the map
+     * contained no mapping for the key; it's also possible that the map
+     * explicitly mapped the key to {@code null}.
+     *
+     * The map will not contain a mapping for the specified key once the
+     * call returns.
+     *
+     * @throws ClassCastException if the given key class doesn't match the class
+     *         of the keys in the map.
+     *
+     * @param key key whose mapping is to be removed from the map
+     * @return the previous value associated with {@code key}, or
+     *         {@code null} if there was no mapping for {@code key}.
+     */
     @Override
     public V remove(Object key) {
         if (size == 0) {
