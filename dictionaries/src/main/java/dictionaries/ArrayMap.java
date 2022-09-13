@@ -10,8 +10,6 @@ import java.util.Objects;
  * implementation. It extends all the methods from {@link AbstractIterableMap} and
  * overrides them with the correct implementation in here.
  *
- * It does not allow for null keys.
- *
  * For more documentation, see {@link AbstractIterableMap}.
  * @param <K> The data type of the key.
  * @param <V> The data type of the value.
