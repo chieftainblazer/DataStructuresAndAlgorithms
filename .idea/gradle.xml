@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Dictionaries" />
+            <option value="$PROJECT_DIR$/SortingAlgorithms" />
             <option value="$PROJECT_DIR$/deques" />
             <option value="$PROJECT_DIR$/heaps" />
           </set>
