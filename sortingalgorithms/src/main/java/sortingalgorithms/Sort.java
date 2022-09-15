@@ -54,11 +54,16 @@ public class Sort<T extends Comparable<? super T>> {
         }
     }
 
+    /**
+     * Uses HeapSort to sort the array.
+     */
     public void heapSort() {
         MaxHeap<T> heap = new MaxHeap<>(elements);
-        List<T> sortedArray = heap.buildHeap();
-        for (int i = 0; i < sortedArray.size(); i++) {
-            elements[i] = sortedArray.get(i);
-        }
+        heap.buildHeap();
     }
+
+    /**
+     * Uses the Merge Sort Algorithm to sort the array.
+     */
+
 }
