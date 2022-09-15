@@ -77,4 +77,40 @@ public class SortTests {
         sort.selectionSort();
         assertThat(array).isSorted();
     }
+
+    /**----------------------------------- Heap Sort Tests -------------------------------**/
+    @Test
+    void assert_HeapSort_OneElement_works() {
+        Integer[] array = new Integer[] {1};
+        Sort sort = new Sort(array);
+        sort.heapSort();
+        assertThat(array).isSorted();
+    }
+
+    @Test
+    void assert_HeapSort_TwoElements_works() {
+        Integer[] array = new Integer[] {2, 1};
+        Sort sort = new Sort(array);
+        sort.heapSort();
+        assertThat(array).isSorted();
+    }
+
+    @Test
+    void assert_HeapSort_ThreeElements_works() {
+        Integer[] array = new Integer[] {3, 2, 1};
+        Sort sort = new Sort(array);
+        sort.heapSort();
+        assertThat(array).isSorted();
+    }
+
+    @Test
+    void assert_HeapSort_20RandomElements_Orders_Correctly() {
+        Integer[] array = new Integer[20];
+        for (int i = 0; i < 20; i++) {
+            array[i] = Integer.valueOf((int) (Math.random() * 20 + 1));
+        }
+        Sort sort = new Sort(array);
+        sort.heapSort();
+        assertThat(array).isSorted();
+    }
 }

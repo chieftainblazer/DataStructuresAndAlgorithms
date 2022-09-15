@@ -1,5 +1,8 @@
 package sortingalgorithms;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Class Sort is used to sort an array of elements is ascending order.
  *
@@ -48,6 +51,14 @@ public class Sort<T extends Comparable<? super T>> {
             T temp = elements[i];
             elements[i] = currentMinimum;
             elements[indexToRemember] = temp;
+        }
+    }
+
+    public void heapSort() {
+        MaxHeap<T> heap = new MaxHeap<>(elements);
+        List<T> sortedArray = heap.buildHeap();
+        for (int i = 0; i < sortedArray.size(); i++) {
+            elements[i] = sortedArray.get(i);
         }
     }
 }
